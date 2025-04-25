@@ -1,12 +1,10 @@
 import os
 import html
-from dotenv import load_dotenv
 import httpx
 from mcp.server.fastmcp import FastMCP
 from urllib.parse import quote
 
-# Load environment variables
-load_dotenv()
+
 PAT = os.environ.get("API_KEY")
 TEAM = os.environ.get("TEAM")
 BASE_URL = os.environ.get("BASE_URL")
