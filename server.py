@@ -75,7 +75,7 @@ async def stackoverflow_search_answers(query: str) -> str:
         for ans in items:
             excerpt = clean_html(ans.get("excerpt", ""))
             qid = ans.get("question_id")
-            link = f"https://{TEAM}.stackoverflowteams.com/c/{TEAM}/questions/{qid}" if qid else "#"
+            link = f"https://stackoverflowteams.com/c/{TEAM}/questions/{qid}" if qid else "#"
             results.append(f"**Answer Excerpt:**\n{excerpt}\n🔗 [View Answer]({link})")
         return "\n\n".join(results)
     except Exception as e:
@@ -102,7 +102,7 @@ async def stackoverflow_search_excerpts(query: str) -> str:
             title = clean_html(item.get("title", ""))
             excerpt = clean_html(item.get("excerpt", ""))
             qid = item.get("question_id")
-            link = f"https://{TEAM}.stackoverflowteams.com/c/{TEAM}/questions/{qid}" if qid else "#"
+            link = f"https://stackoverflowteams.com/c/{TEAM}/questions/{qid}" if qid else "#"
             results.append(
                 f"**Type:** {item_type}\n**Title:** {title}\n{excerpt}\n🔗 [View Full Post]({link})"
             )
